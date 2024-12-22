@@ -131,12 +131,12 @@ module Jekyll
         if wikilink.labelled?
           inner_txt = wikilink.label_txt
         elsif linked_doc.data.keys.include?('title')
-          inner_txt = linked_doc.data['title'].downcase
+          inner_txt = linked_doc.data['title']
         # in case there is no 'title' frontmatter attribute 
         # (i'm seeing deprecation warnings, but there might 
         #  be bugs caused by not using this...)
         elsif linked_doc.respond_to?(:title)
-          inner_txt = linked_doc.title.downcase
+          inner_txt = linked_doc.title
         # pages don't have automatically generated titles
         else
           inner_txt = Jekyll::Utils.slugify(linked_doc.basename)

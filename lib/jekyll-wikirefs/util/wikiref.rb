@@ -274,11 +274,11 @@ module Jekyll
 
       def is_img?
         # github supported image formats: https://docs.github.com/en/github/managing-files-in-a-repository/working-with-non-code-files/rendering-and-diffing-images
-        return SUPPORTED_IMG_FORMATS.any?{ |ext| ext == File.extname(@filename).downcase }
+        return SUPPORTED_IMG_FORMATS.any?{ |ext| ext == File.extname(@filename) }
       end
 
       def is_img_svg?
-        return File.extname(@filename).downcase == ".svg"
+        return File.extname(@filename) == ".svg"
       end
 
       # this method helps to make the 'WikiLinkInline.level' code read like a clean truth table.

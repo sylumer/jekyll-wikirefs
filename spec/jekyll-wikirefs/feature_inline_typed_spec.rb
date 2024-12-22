@@ -69,8 +69,8 @@ RSpec.describe(Jekyll::WikiRefs::Generator) do
           expect(link.output).to_not include(".html")
         end
 
-        it "downcases title in wikilink's rendered text" do
-          expect(link.output).to include('>' + blank_a.data['title'].downcase + '<')
+        it "title in wikilink's rendered text" do
+          expect(link.output).to include('>' + blank_a.data['title'] + '<')
         end
 
       end
